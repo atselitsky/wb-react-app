@@ -1,0 +1,28 @@
+@import '~antd/dist/antd.css';
+
+.sidebar{
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content:flex-start;
+        border-right: 1px solid gray;
+}
+.logo{
+        min-height: 30vh;
+        color:white;
+        background-color: rgb(0, 21, 41);
+}
+
+.sidebar-menu {
+        min-height: 70vh;
+        display: flex;
+        flex-direction: column;
+        justify-content:flex-end;
+}
+.sidebar-item{
+        height: 100px;
+}
+.sidebar-item:last-child{ 
+        margin-top: auto;
+
+}

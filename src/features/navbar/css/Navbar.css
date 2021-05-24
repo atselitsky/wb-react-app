@@ -1,0 +1,12 @@
+@import '~antd/dist/antd.css';
+.navbar-wrapper{
+        border-bottom: 1px solid gray;
+}
+.navbar{
+        display: flex;
+        flex-direction: row;
+        justify-content:flex-end;
+}
+.menu-button{
+        margin-right:auto;
+}
