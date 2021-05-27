@@ -1,7 +1,8 @@
 //import { message } from 'antd';
 import * as actionTypes from './actionTypes'
 
-const initialState: ChannelState = {
+const initialState  = {
+  value:111,
   articles: [
     {
       key: 1,
@@ -16,13 +17,14 @@ const initialState: ChannelState = {
         "32.35 C",
     },
   ],
+
 }
 
 const reducer = (
-  state: ChannelState = initialState,
+  state= initialState,
   action: ChannelAction
-): ChannelState => {
-let changed = false;
+) => {
+  let changed = false;
   switch (action.type) {
     case actionTypes.ADD_ARTICLE:
       let changedArticles = state.articles.map((item)=>{

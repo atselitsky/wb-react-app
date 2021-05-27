@@ -1,15 +1,17 @@
 import * as React from 'react'
 import { useEffect } from 'react'
-import { useSelector, shallowEqual, useDispatch } from "react-redux"
-import { Article } from "../components/MqttChannel"
-import { AddArticle } from "../components/AddArticle"
-import { addArticle, removeArticle } from "../store/actions"
+import { useSelector, useDispatch } from "react-redux"
 import { Dispatch } from "redux"
 import {Table} from 'antd'
+
+import { addArticle, removeArticle } from "../store/actions"
+
+import {selectors} from '../store'
 
 
 const ws = new WebSocket('ws://localhost:8080/ws')
 const DevicesList:React.FC = () =>{
+    const articles = useSelector(selectors.getArticles)
     const columns =[
         {
             title:'Path',
@@ -22,10 +24,6 @@ const DevicesList:React.FC = () =>{
             key:'body'
             },
     ]
-    const articles: readonly IMqttChannel[] = useSelector(
-        (state: ChannelState) => state.articles,
-        shallowEqual
-    )
     
     const dispatch: Dispatch<any> = useDispatch()
     
@@ -40,7 +38,7 @@ const DevicesList:React.FC = () =>{
         }
         ws.onmessage = (e) =>{
             let msg = JSON.parse(e.data)
-            // console.log(msg)
+            console.log(msg)
             let article:IMqttChannel = {
                 key:Math.random(),
                 path:msg.Path,
@@ -63,7 +61,8 @@ const DevicesList:React.FC = () =>{
                 removeArticle={removeArticle}
             />
             ))}   */}
-            <Table columns={columns}  dataSource={articles}/>
+            <Table columns={columns} dataSource={articles}/>
+            
             </main>
         )
     }

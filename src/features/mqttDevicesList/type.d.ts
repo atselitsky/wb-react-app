@@ -21,7 +21,9 @@ interface IMqttChannel {
 }
 
 type ChannelState = {
-  articles: IMqttChannel[]
+  devices:{
+    articles: IMqttChannel[]
+  }
 }
 
 type ChannelAction = {
