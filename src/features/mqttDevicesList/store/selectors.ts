@@ -1,1 +1,0 @@
-export const getArticles =  (state: ChannelState) => state.devices.articles//shallowEqual)

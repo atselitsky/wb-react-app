@@ -2,7 +2,6 @@
 import * as actionTypes from './actionTypes'
 
 const initialState  = {
-  value:111,
   articles: [
     {
       key: 1,

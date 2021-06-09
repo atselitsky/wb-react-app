@@ -1,10 +1,10 @@
 import { combineReducers,applyMiddleware, createStore} from 'redux'
 import thunk from 'redux-thunk';
 
-import { DevicesReducer } from './features/mqttDevicesList/store'
+import { TopicsReducer } from './features/topics/store'
 
 const rootReducer =  combineReducers({
-    devices: DevicesReducer,
+    topics: TopicsReducer,
     })
 
 

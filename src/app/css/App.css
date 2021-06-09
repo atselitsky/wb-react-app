@@ -3,5 +3,10 @@
 .App{
         min-height: 100vh;
 }
-
+.content{
+        padding: 3vw;
+}
+.sider{
+        padding: 0;
+}
 

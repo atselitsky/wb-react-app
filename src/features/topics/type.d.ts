@@ -21,7 +21,7 @@ interface IMqttChannel {
 }
 
 type ChannelState = {
-  devices:{
+  topics:{
     articles: IMqttChannel[]
   }
 }
