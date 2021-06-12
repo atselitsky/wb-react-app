@@ -1,19 +1,21 @@
-import * as React from "react"
-import { Menu } from 'antd'
-import { AlignLeftOutlined, WifiOutlined, UserOutlined } from '@ant-design/icons'
+import * as React from "react" 
+import {Typography} from 'antd' 
+
 import '../css/Navbar.css'
-class Navbar extends React.Component {
-  render() {
+
+const { Title } = Typography;
+
+interface NavbarProps{
+  PageTitle:string;
+}
+
+const Navbar:React.FC<NavbarProps> = ({PageTitle}) => {
     return (
-      <div className="navbar-wrapper">
-        <Menu className="navbar" theme="dark" mode="horizontal">
-          <Menu.Item key="1" className="menu-button" icon={<AlignLeftOutlined />}></Menu.Item>
-          <Menu.Item key="2" className="" icon={<WifiOutlined />}></Menu.Item>
-          <Menu.Item key="3" className="" icon={<UserOutlined />}></Menu.Item>
-        </Menu>
+      <div className="navbar">
+        <Title level={1}>{PageTitle}</Title>
       </div>
     )
-  }
 }
+
 
 export default Navbar;

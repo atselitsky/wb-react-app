@@ -4,8 +4,7 @@ import { useSelector, useDispatch } from "react-redux"
 import { Dispatch } from "redux"
 import {Table} from 'antd'
 
-import { addArticle, removeArticle } from "../store/actions"
-
+import { addArticle } from "../store/actions"
 import {selectors} from '../store'
 
 
@@ -14,12 +13,12 @@ const DevicesList:React.FC = () =>{
     const articles = useSelector(selectors.getArticles)
     const columns =[
         {
-            title:'Path',
+            title:'Топик',
             dataIndex:'path',
             key:'path'
         },
         {
-            title:'Body',
+            title:'Данные',
             dataIndex:'body',
             key:'body'
             },
@@ -61,8 +60,12 @@ const DevicesList:React.FC = () =>{
                 removeArticle={removeArticle}
             />
             ))}   */}
-            <Table columns={columns} dataSource={articles}/>
-            
+            <Table
+                bordered={true} 
+                columns={columns} 
+                dataSource={articles}
+                pagination={{pageSize:15}}
+            />
             </main>
         )
     }

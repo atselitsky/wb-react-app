@@ -1,11 +1,10 @@
 @import '~antd/dist/antd.css';
-.navbar-wrapper{
-        border-bottom: 1px solid gray;
-}
+
 .navbar{
         display: flex;
         flex-direction: row;
-        justify-content:flex-end;
+        justify-content:flex-start;
+        padding: 3vh 3vw;
 }
 .menu-button{
         margin-right:auto;
